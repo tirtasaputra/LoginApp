@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/result_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
+        android:textSize="64dp"
+        android:textAlignment="center"
+        android:text="Result"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorText"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:text="Enter any number"/>
+
+    <EditText
+        android:id="@+id/input1_edit_text"
+        android:layout_gravity="center"
+        style="@style/editText_style"
+        android:layout_width="300dp"
+        android:layout_marginBottom="8dp"
+        android:hint="First Number"
+        android:inputType="number"
+        android:textColorHint="@color/colorText" />
+
+    <EditText
+        android:id="@+id/input2_edit_text"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        style="@style/editText_style"
+        android:hint="Second Number"
+        android:textColorHint="@color/colorText"
+        android:layout_marginBottom="8dp"
+        android:inputType="number"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/plus_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/gradient_color_box"
+            android:text="+"
+            android:textSize="24dp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/minus_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_gravity="center"
+            android:background="@drawable/gradient_color_box"
+            android:text="-"
+            android:textSize="24dp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/times_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/gradient_color_box"
+            android:text="*"
+            android:textSize="24dp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/divide_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_gravity="center"
+            android:background="@drawable/gradient_color_box"
+            android:text="/"
+            android:textSize="24dp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
