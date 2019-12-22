@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean emptyValidation() {
-        if (TextUtils.isEmpty(etFirstNumber.getText().toString()) || TextUtils.isEmpty(etFirstNumber.getText().toString())) {
+        if (TextUtils.isEmpty(etFirstNumber.getText().toString()) || TextUtils.isEmpty(etSecondNumber.getText().toString())) {
             return true;
         }else {
             return false;
