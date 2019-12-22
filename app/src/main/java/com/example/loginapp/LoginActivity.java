@@ -75,14 +75,14 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(i);
                                 finish();
                             }else{
-                                Toast.makeText(LoginActivity.this, "Unregistered user, or incorrect", Toast.LENGTH_SHORT).show();
+                                tvError.setText("Unregistered user  or incorrect");
                             }
                             progressDialog.dismiss();
                         }
                     }, 1000);
 
                 }else{
-                    Toast.makeText(LoginActivity.this, "Empty Fields", Toast.LENGTH_SHORT).show();
+                    tvError.setText("Empty Fields");
                 }
             }
         });
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent registerIntent =  new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(registerIntent);
-                finish(); //untuk kill activity
+                finish();
             }
         });
 

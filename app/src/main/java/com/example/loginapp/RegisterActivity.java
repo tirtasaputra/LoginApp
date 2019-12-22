@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText etFullName, etNickName, etUsername, etPassword;
     Button btnRegister;
+    TextView tvError;
 
     private UserDao userDao;
     private ProgressDialog progressDialog;
@@ -44,11 +46,14 @@ public class RegisterActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.username_edit_text);
         etPassword = findViewById(R.id.password_edit_text);
         btnRegister = findViewById(R.id.register_button);
+        tvError = findViewById(R.id.error_text_view);
 
         final String fullName = etFullName.getText().toString();
         final String nickName = etNickName.getText().toString();
         final String userName = etUsername.getText().toString();
         final String password = etPassword.getText().toString();
+
+        tvError.setText("");
 
         userDao = Room.databaseBuilder(this, UserDatabase.class, "mi-database.db")
                 .allowMainThreadQueries()
@@ -72,11 +77,12 @@ public class RegisterActivity extends AppCompatActivity {
                             userDao.insertUser(user);
                             progressDialog.dismiss();
                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            finish();
                         }
                     }, 1000);
 
                 } else {
-                    Toast.makeText(RegisterActivity.this, "Empty Fields", Toast.LENGTH_SHORT).show();
+                    tvError.setText("Empty Fields");
                 }
             }
         });

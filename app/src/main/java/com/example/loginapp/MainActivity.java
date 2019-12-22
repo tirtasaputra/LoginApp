@@ -1,6 +1,7 @@
 package com.example.loginapp;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +13,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etFirstNumber, etSecondNumber;
     Button btnPlus, btnMinus, btnTimes, btnDivide;
-    TextView tvResult;
+    TextView tvResult, tvError;
+
+    String stringNumber1, stringNumber2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,40 +29,65 @@ public class MainActivity extends AppCompatActivity {
         btnTimes = findViewById(R.id.times_button);
         btnDivide = findViewById(R.id.divide_button);
         tvResult = findViewById(R.id.result_text_view);
+        tvError = findViewById(R.id.error_text_view);
+
+        tvError.setText("");
 
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvResult.setText(Operation("plus"));
+                if (!emptyValidation()) {
+                    tvError.setText("");
+                    tvResult.setText(Operation("plus"));
+                }else{
+                    tvError.setText("Empty Fields");
+                }
             }
         });
 
         btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvResult.setText(Operation("minus"));
+                if (!emptyValidation()) {
+                    tvError.setText("");
+                    tvResult.setText(Operation("minus"));
+                }else{
+                    tvError.setText("Empty Fields");
+                }
             }
         });
 
         btnTimes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvResult.setText(Operation("times"));
+                if (!emptyValidation()) {
+                    tvError.setText("");
+                    tvResult.setText(Operation("times"));
+                }else{
+                    tvError.setText("Empty Fields");
+                }
             }
         });
 
         btnDivide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvResult.setText(Operation("divide"));
+                if (!emptyValidation()) {
+                    tvError.setText("");
+                    tvResult.setText(Operation("divide"));
+                }else{
+                    tvError.setText("Empty Fields");
+                }
             }
         });
 
     }
 
+
     private String Operation(String operation){
-        String stringNumber1 = etFirstNumber.getText().toString();
-        String stringNumber2 = etSecondNumber.getText().toString();
+
+        stringNumber1 = etFirstNumber.getText().toString();
+        stringNumber2 = etSecondNumber.getText().toString();
 
         double doubleNumber1 = Double.parseDouble(stringNumber1);
         double doubleNumber2 = Double.parseDouble(stringNumber2);
@@ -85,4 +113,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private boolean emptyValidation() {
+        if (TextUtils.isEmpty(etFirstNumber.getText().toString()) || TextUtils.isEmpty(etFirstNumber.getText().toString())) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 }

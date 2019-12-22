@@ -51,6 +51,15 @@
         android:layout_marginBottom="8dp"
         android:inputType="number"/>
 
+    <TextView
+        android:id="@+id/error_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Error"
+        android:textColor="@color/colorError"
+        android:textAlignment="center"
+        android:gravity="center"/>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

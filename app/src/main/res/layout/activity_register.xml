@@ -55,6 +55,15 @@
             android:layout_marginBottom="8dp"
             android:inputType="textPassword" />
 
+        <TextView
+            android:id="@+id/error_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Error"
+            android:textColor="@color/colorError"
+            android:textAlignment="center"
+            android:gravity="center"/>
+
         <Button
             android:id="@+id/register_button"
             android:layout_width="200dp"
